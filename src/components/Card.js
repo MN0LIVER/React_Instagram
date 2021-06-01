@@ -13,6 +13,7 @@ function Card (props) {
         likedByNumber,
         hours,
     } = props;    
+
     return (
         <div className="card">
             <header>
@@ -29,11 +30,12 @@ function Card (props) {
                 </span>
             </div>
             <div className="comments">
-                {comments.map(comments => {
+                {comments.map((comment) => {
                     return (
-                        <Comment key={comments.id}
-                        accountName={comments.user}
-                        comments={comments.text}
+                        <Comment 
+                            key={comment.id}
+                            accountName={comment.user}
+                            comment={comment.text}
                         />
                     );
                 })}
